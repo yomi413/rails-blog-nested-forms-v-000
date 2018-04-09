@@ -20,8 +20,9 @@
 
   <div class="field">
     <p>Create New Tags:</p>
-    <%= f.fields_for(:tags) do |tag_form| %>
-      <%= tag_form.text_field :name %>
+    <%= f.fields_for(:tags) do |tag_fields| %>
+      <%= tag_fields.label :name %>
+      <%= tag_fields.text_field :name %>
     <% end %>
   </div>
 
