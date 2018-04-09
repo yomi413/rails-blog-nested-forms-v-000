@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :name, :content
 
-  def if_blank(attributes)
-    attributes[:name].blank?
-  end
+  # def if_blank(attributes)
+  #   attributes[:name].blank?
+  # end
 end
