@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, reject_if: :reject_tags
   accepts_nested_attributes_for :post_tags
 
+  
+
   def reject_tags(attributes)
     attributes[:name].blank?
   end
