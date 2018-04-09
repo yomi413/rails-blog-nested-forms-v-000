@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
     tag_attributes.values.each do |tag_attribute|
       tag = Tag.find_or_create_by(tag_attribute)
       self.tags << tag
+    end
   end
 
   def reject_tags(attributes)
