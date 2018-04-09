@@ -5,4 +5,11 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :post_tags
 
   validates_presence_of :name, :content
+
+  accepts_nested_attributes_for :tags, reject_if: :reject_tags
+  accepts_nested_attributes_for :post_tags
+
+  def reject_tags(attributes)
+    attributes[:name].blank?
+  end
 end
