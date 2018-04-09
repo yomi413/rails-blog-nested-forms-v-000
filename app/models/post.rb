@@ -9,15 +9,6 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, reject_if: proc { |attributes| attributes[:name].blank?}
   accepts_nested_attributes_for :post_tags
 
-  # def tags_attributes=(tag)
-  #   self.tag = Tag.find_or_create_by(name: tag.name)
-  #   self.tag.update(tag)
-    # tag_attributes.value.each do |tag_attribute|
-    #   tag = Tag.find_or_create_by(tag_attribute)
-    #   self.tags << tag
-    # end
-  # end
-
   def reject_tags(attributes)
     attributes[:name].blank?
   end
